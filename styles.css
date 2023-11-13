@@ -47,26 +47,23 @@ h2 {
   margin-left: 15rem;
 }
 
-@media (max-width: 700px) {
-  .form-container {
-    position: static;
-    width: 100%;
-    max-width: 100%;
-  }
-  .skills {
-    flex-direction: column;
-    align-items: center;
-  }
-  .app-wrapper {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  .about-section {
-    max-width: 100vw;
-    text-align: start;
-    display: contents;
-  }
+.skills {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 90vw;
 }
+
+.skill {
+  text-align: center;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.skill img {
+  max-width: 70px;
+}
+
 @media (max-width: 970px) {
   .app-wrapper {
     color: #000;
@@ -85,25 +82,32 @@ h2 {
   }
 }
 
+@media (max-width: 700px) {
+  .form-container {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+  }
+  .skill {
+    width: 50%;
+  }
+  .skills {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .app-wrapper {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .about-section {
+    max-width: 100vw;
+    text-align: start;
+  }
+}
+
 section {
   padding: 40px;
-}
-
-.skills {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  width: 90vw;
-}
-
-.skill {
-  text-align: center;
-  width: 30%;
-  margin-bottom: 20px;
-}
-
-.skill img {
-  max-width: 70px;
 }
 
 footer {
