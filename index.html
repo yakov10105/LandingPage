@@ -21,7 +21,8 @@
       src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
       crossorigin="anonymous"
     ></script>
-    <title>English Teacher Landing Page</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>המורה שלך לאנגלית</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -36,44 +37,44 @@
     </header>
     <section>
       <div class="form-container">
-        <form id="contact" action="" method="post">
-          <h3>Quick Contact</h3>
-          <h4>additional line</h4>
+        <form id="contact" onsubmit="onSubmit()">
+          <h3 style="direction: rtl; text-align: start">השאירו פרטים</h3>
           <fieldset>
-            <input placeholder="Your name" type="text" tabindex="1" required />
+            <input
+              style="text-align: start; direction: rtl"
+              placeholder="שם מלא"
+              type="text"
+              tabindex="1"
+              required
+            />
           </fieldset>
           <fieldset>
             <input
-              placeholder="Your Phone Number"
+              style="text-align: start; direction: rtl"
+              placeholder="טלפון"
               type="tel"
+              pattern="\d*"
               tabindex="3"
               required
             />
           </fieldset>
           <fieldset>
             <input
-              placeholder="Current level"
+              style="text-align: start; direction: rtl"
+              placeholder="רמה נוכחית (לא חובה)"
               type="text"
               tabindex="4"
-              required
             />
           </fieldset>
           <fieldset>
             <textarea
-              placeholder="Type your Message Here...."
+              style="text-align: start; direction: rtl"
+              placeholder="טקסט חופשי (לא חובה)"
               tabindex="5"
-              required
             ></textarea>
           </fieldset>
           <fieldset>
-            <button
-              name="submit"
-              type="submit"
-              id="contact-submit"
-              data-submit="...Sending"
-            >
-              Submit
-            </button>
+            <button name="שלח" type="submit" id="contact-submit">שלח</button>
           </fieldset>
         </form>
       </div>
@@ -81,19 +82,17 @@
     <section class="about-section">
       <h2 style="direction: rtl">קצת עליי</h2>
       <p style="direction: rtl">
-        מורה לאנגלית עם נסיון של 6 שמים. עבדתי בארץ, ויטנאם ורוסיה עם תלמידים בן
-        2 ל80.
+        מורה לאנגלית עם כ-6 שנות ניסיון. עבדתי בארץ, ברוסיה ובוייטנאם עם מגוון
+        תלמידים מגילאי שנתיים ועד גיל 80.
       </p>
       <p style="direction: rtl">
-        אעזור לך לשפר את האנגלית שלך באווירה קלילה ורגועה. נשתמש בחומרי
-        (authentic, real-life) כדי שתוכל.י להביע את דעתך ולהשתתף בשיחות בחיים
-        אמיתיים כמה שיותר מהר. אם יש משהוא כשה בספה, נתרכז על זה כדי שתרגיש.י
-        יותר נוח כשתדבר.׳
+        אעזור לך לשפר את האנגלית שלך באווירה קלילה ורגועה.במהלך השיעורים נשלב
+        תכנים מחיי היום יום כך שמהר מאוד תוכל להיות חלק מכל שיחה.אנו נתמקד
+        בחולשות השפה שלך כדי שתוכל להרגיש נח ובטוח בדיבור, בקריאה ובכתיבה שלך.
       </p>
       <p style="direction: rtl">
-        נדבר על חייך וכל תחומי העניין שלך (כן, גם על השדרה שראית בנטפליקס
-        הסופ״ש). לדוגמה, אני מעונינת טיולים, פסיכולוגיה, גסטרונומיה, חינוך,
-        סדרות ויוגה. מה עליך? אני מתרגשת לשמוע
+        נדבר על חייך ועל תחומי העניין שלך (כן, גם על הסדרה שראית בנטפליקס
+        הסופ״ש). אני אוהבת טיולים, פסיכולוגיה ויוגה. ואתה? אני מחכה לשמוע!
       </p>
     </section>
     <section>
@@ -101,20 +100,14 @@
         <div class="skill">
           <img src="./icon-ex.png" alt="Skill Icon" />
           <h3 style="direction: rtl">איך זה עובד ?</h3>
-          <p style="direction: rtl">
-            פעם או פעמיים בשבוע 60 או 90 דקות שעירים בזום או שעיורים פרונטלים
-            שיעורי בית (אופציונלי) 150ש״ח ל60 דקות 200 ש״ח ל90 דקות שעיורים
-            אונליין רק מגל 12. לילדים אפשר לקיים שעורים פרונתלים בתל אביב
-          </p>
-        </div>
-        <div class="skill">
-          <img src="./insta.png" alt="Skill Icon" />
-          <h3>Skill 2</h3>
-          <p style="direction: rtl">
-            Vivamus vel commodo nisl, cursus pharetra nisl. Proin elementum
-            blandit ultricies. Aenean iaculis lorem non orci viverra, in mattis
-            tellus ullamcorper.
-          </p>
+          <ul style="direction: rtl">
+            <li>שיעורים של 60 או 90 דקות</li>
+            <li>
+              שיעורים פרונטליים (באזור תל אביב) או בזום. ניתן לקיים שיעורים בזום
+              מגיל 12 ומעלה.
+            </li>
+            <li>המחיר הוא 150₪ לשיעור של 60 דק' ו-200₪ לשיעור של 90 דק'</li>
+          </ul>
         </div>
         <div class="skill">
           <img src="./icon-2.png" alt="Skill Icon" />
@@ -188,28 +181,10 @@
       <img src="./profile.jpeg" alt="Your Image" />
       <div class="rounded-social-buttons">
         <a
-          class="social-button facebook"
-          href="https://www.facebook.com/"
-          target="_blank"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a
-          class="social-button twitter"
-          href="https://www.twitter.com/"
-          target="_blank"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a
           class="social-button linkedin"
           href="https://www.linkedin.com/"
           target="_blank"
           ><i class="fab fa-linkedin"></i
-        ></a>
-        <a
-          class="social-button youtube"
-          href="https://www.youtube.com/"
-          target="_blank"
-          ><i class="fab fa-youtube"></i
         ></a>
         <a
           class="social-button instagram"
@@ -219,7 +194,6 @@
         ></a>
       </div>
     </footer>
-
-    <script src="scripts.js"></script>
   </body>
+  <script src="scripts.js"></script>
 </html>
