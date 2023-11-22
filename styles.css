@@ -2,14 +2,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Fredoka", sans-serif;
-  background-color: #fdf2e1;
+  background-color: #e3edf2;
 }
 .app-wrapper {
   margin-left: 20%;
   margin-right: 20%;
 }
 header {
-  background: #2d73a4;
+  background: #b96d40;
   color: #fff;
   text-align: left;
   padding: 80px 0;
@@ -18,6 +18,7 @@ header {
 
 .header-content {
   max-width: 61%;
+  font-size: larger;
 }
 .fill {
   width: 180px;
@@ -40,7 +41,7 @@ h2 {
   position: absolute;
   top: 80px;
   right: 20px;
-  background: #2d73a4;
+  background: #374a67;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -55,21 +56,31 @@ h2 {
 
 .skills {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
   width: 90vw;
 }
 
 .skill {
   text-align: center;
-  width: 50%;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skill ul {
+  list-style-type: circle;
+  list-style-position: outside;
 }
 .skill li {
   text-align: start;
 }
 .skill p {
   text-align: start;
+}
+.skill span {
+  /* text-align: start; */
 }
 .skill img {
   max-width: 70px;
@@ -127,7 +138,7 @@ h2 {
   }
   .about-section {
     max-width: 100vw;
-    text-align: start;
+    text-align: center;
   }
   .header-content {
     display: flex;
@@ -160,7 +171,7 @@ section {
 }
 
 footer {
-  background: #1d4a68;
+  background: #374a67;
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -168,7 +179,7 @@ footer {
 }
 
 footer img {
-  max-width: 100px;
+  max-width: 60px;
   position: relative;
   bottom: 50px;
 }
@@ -198,7 +209,6 @@ h2.testimonials::after {
 }
 .carousel {
   margin: 50px auto;
-  padding: 0 70px;
 }
 .carousel .item {
   color: #999;
@@ -234,16 +244,25 @@ h2.testimonials::after {
 .carousel .carousel-control {
   width: 5px;
   height: 40px;
-  margin-top: -130px;
+  margin-top: -11rem;
   top: 50%;
   background: none;
+}
+.carousel-control {
+  color: #000;
+}
+.carousel-control.right {
+  right: -1.5rem;
+}
+.carousel-control.left {
+  left: -2rem;
 }
 .carousel-control i {
   font-size: 68px;
   line-height: 42px;
   position: absolute;
   display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
+  color: black;
   text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
 }
 .carousel .carousel-indicators {
