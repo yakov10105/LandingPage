@@ -1,16 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: #f1eaff;
+  font-family: "Fredoka", sans-serif;
+  background-color: #fdf2e1;
 }
 .app-wrapper {
   margin-left: 20%;
   margin-right: 20%;
 }
 header {
-  background: #e5d4ff;
+  background: #2d73a4;
   color: #fff;
   text-align: left;
   padding: 80px 0;
@@ -41,7 +40,7 @@ h2 {
   position: absolute;
   top: 80px;
   right: 20px;
-  background: #dcbfff;
+  background: #2d73a4;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -161,7 +160,7 @@ section {
 }
 
 footer {
-  background: #d0a2f7;
+  background: #1d4a68;
   color: #fff;
   text-align: center;
   padding: 20px;
