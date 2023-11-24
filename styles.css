@@ -79,11 +79,17 @@ h2 {
 .skill p {
   text-align: start;
 }
-.skill span {
-  /* text-align: start; */
-}
 .skill img {
   max-width: 70px;
+}
+
+#success_alert,
+#fail_alert {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 970px) {
@@ -125,7 +131,7 @@ h2 {
     max-width: 100%;
   }
   .skill {
-    width: 50%;
+    width: 75%;
   }
   .skills {
     flex-direction: column;

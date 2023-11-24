@@ -23,11 +23,55 @@
       src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('37KEs17QuO7svd4hA');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_extxan8', 'template_63ezslj', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        let alert = document.getElementById("success_alert");
+                        alert.style.display="flex";
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        let alert = document.getElementById("fail_alert");
+                        alert.style.display="flex";
+                    });
+                document.forms[0].reset()
+            });
+        }
+        function closeAlert(isSuccess){
+          const elementId = isSuccess?"success_alert":"fail_alert";
+          let alert = document.getElementById(elementId);
+          alert.style.display="none";
+        }
+    </script>
+
     <title>המורה שלך לאנגלית</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div style="display:none;" id="success_alert" class="alert alert-success" role="alert">
+      <a onclick="closeAlert(true)">
+          <span class="glyphicon glyphicon-remove"></span>
+      </a>
+      <span style="text-align: start;direction: rtl;">הטופס נשלח בהצלחה!</span>
+    </div>
+     <div style="display: none;"  id="fail_alert" class="alert alert-danger" role="alert">
+      <a onclick="closeAlert(false)">
+        <span class="glyphicon glyphicon-remove"></span>
+      </a>
+      <span  style="text-align: start;direction: rtl;">חלה שגיאה, אנא נסה שנית.</span>
+    </div>
     <header>
       <div class="header-content">
         <div>
@@ -39,8 +83,9 @@
     </header>
     <section>
       <div class="form-container">
-        <form id="contact" onsubmit="onSubmit()">
+        <form id="contact">
           <h3 style="direction: rtl; text-align: start">השאירו פרטים</h3>
+          <input type="hidden" name="contact_number">
           <fieldset>
             <input
               style="text-align: start; direction: rtl"
@@ -48,6 +93,7 @@
               type="text"
               tabindex="1"
               required
+              name="user_name"
             />
           </fieldset>
           <fieldset>
@@ -57,6 +103,7 @@
               type="tel"
               pattern="\d*"
               tabindex="3"
+              name="user_phone"
               required
             />
           </fieldset>
@@ -64,6 +111,7 @@
             <input
               style="text-align: start; direction: rtl"
               placeholder="רמה נוכחית (לא חובה)"
+              name="user_level"
               type="text"
               tabindex="4"
             />
@@ -73,10 +121,11 @@
               style="text-align: start; direction: rtl"
               placeholder="טקסט חופשי (לא חובה)"
               tabindex="5"
+              name="message"
             ></textarea>
           </fieldset>
           <fieldset>
-            <button name="שלח" type="submit" id="contact-submit">שלח</button>
+            <button type="submit" id="contact-submit">שלח</button>
           </fieldset>
         </form>
       </div>
@@ -200,5 +249,4 @@
       </div>
     </footer>
   </body>
-  <script src="scripts.js"></script>
 </html>
