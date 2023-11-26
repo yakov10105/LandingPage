@@ -54,6 +54,13 @@
           let alert = document.getElementById(elementId);
           alert.style.display="none";
         }
+        function onContactClick(){
+          const formInput = document.getElementById("user_name");
+          formInput.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+          setTimeout(()=>{
+            formInput.focus();
+          },700);
+        }
     </script>
 
     <title>המורה שלך לאנגלית</title>
@@ -92,6 +99,7 @@
               placeholder="שם מלא"
               type="text"
               tabindex="1"
+              id="user_name"
               required
               name="user_name"
             />
@@ -192,7 +200,7 @@
                 גם דרך זום וגם בצורה פרונטלית. אני מעריך את זה שאני תמיד יכול
                 לשאול כל שאלה ולקבל תשובה איכותית ומפורטת.
               </p>
-              <p class="overview"><b>שרה</b>, תלמידה</p>
+              <p class="overview"><b>הילה</b>, תלמידה</p>
             </div>
             <div class="item carousel-item">
               <p class="testimonial">
@@ -205,44 +213,43 @@
             </div>
             <div class="item carousel-item">
               <p class="testimonial">
-                Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id
-                lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus
-                turpis at accumsan tincidunt. Phasellus risus risus, volutpat
-                vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor
-                eget rutrum.
+                טניה היא מורה מצוינת ובן אדם מקסים! הגעתי אליה לפני כחצי שנה כשבקושי יכולתי להרכיב משפט אחד באנגלית וכיום אני שולט בשפה גם מבחינת דיבור וגם מבחינת דקדוק ואוצר מילים.
+מורה קשובה שיודעת לזהות את נקודות החולשה שלך בשפה ולשים עליהם דגש עד לשליטה מלאה.
+
               </p>
-              <p class="overview"><b>Jane Doe</b>, ****</p>
+              <p class="overview"><b>דן</b>, תלמיד</p>
             </div>
           </div>
           <a
-            class="carousel-control left carousel-control-prev"
-            href="#myCarousel"
-            data-slide="prev"
+          class="carousel-control left carousel-control-prev"
+          href="#myCarousel"
+          data-slide="prev"
           >
-            <i class="fa fa-angle-left"></i>
-          </a>
-          <a
-            class="carousel-control right carousel-control-next"
-            href="#myCarousel"
-            data-slide="next"
-          >
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </div>
-      </section>
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a
+        class="carousel-control right carousel-control-next"
+        href="#myCarousel"
+        data-slide="next"
+        >
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+    <button id="contact_btn" onclick="onContactClick()">אני בעניין!</button>
+  </section>
     </div>
     <footer>
       <img src="./cat.png" alt="Your Image" />
       <div class="rounded-social-buttons">
         <a
           class="social-button linkedin"
-          href="https://www.linkedin.com/"
+          href="https://www.linkedin.com/in/tatiana-petrushkevich-164a51272/"
           target="_blank"
           ><i class="fab fa-linkedin"></i
         ></a>
         <a
           class="social-button instagram"
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/tanipetrush/"
           target="_blank"
           ><i class="fab fa-instagram"></i
         ></a>
