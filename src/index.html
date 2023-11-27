@@ -24,47 +24,9 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init('Ry72nBZDW4F0N2eLq');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('service_1hfxevs', 'template_j88o9qn', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                        let alert = document.getElementById("success_alert");
-                        alert.style.display="flex";
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                        let alert = document.getElementById("fail_alert");
-                        alert.style.display="flex";
-                    });
-                document.forms[0].reset()
-            });
-        }
-        function closeAlert(isSuccess){
-          const elementId = isSuccess?"success_alert":"fail_alert";
-          let alert = document.getElementById(elementId);
-          alert.style.display="none";
-        }
-        function onContactClick(){
-          const formInput = document.getElementById("user_name");
-          formInput.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-          setTimeout(()=>{
-            formInput.focus();
-          },700);
-        }
-    </script>
-
+    <script type="text/javascript" src="./scripts/index.js"></script>
     <title>המורה שלך לאנגלית</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
     <div style="display:none;" id="success_alert" class="alert alert-success" role="alert">
@@ -85,7 +47,7 @@
           <h1 style="direction: rtl; text-align: start">טניה פטרושקביץ'</h1>
           <h2 style="direction: rtl; text-align: start">המורה שלך לאנגלית!</h2>
         </div>
-        <div class="fill" style="background-image: url('tania.jpg')"></div>
+        <div class="fill" style="background-image: url('./assets/tania.JPG')"></div>
       </div>
     </header>
     <section>
@@ -160,7 +122,7 @@
     <section>
       <div class="skills">
         <div class="skill">
-          <img src="./handshake.png" alt="Skill Icon" />
+          <img src="./assets/handshake.png" alt="Skill Icon" />
           <h3 style="direction: rtl">איך זה עובד ?</h3>
           <p style="direction: rtl">שיעורים בזום, לגילאי 12 ומעלה </פ>
           <ul style="direction: rtl">
@@ -171,7 +133,7 @@
           <span style="direction: rtl">לכל הגילאים (במחיר משתנה)</span>
         </div>
         <div class="skill">
-          <img src="./convers.png" alt="Skill Icon" />
+          <img src="./assets/convers.png" alt="Skill Icon" />
           <h3 style="direction: rtl">במה אני יכולה לעזור?</h3>
           <ul style="direction: rtl">
             <li>העלאת הבטחון העצמי בדיבור</li>
@@ -239,7 +201,7 @@
   </section>
     </div>
     <footer>
-      <img src="./cat.png" alt="Your Image" />
+      <img src="./assets/cat.png" alt="Your Image" />
       <div class="rounded-social-buttons">
         <a
           class="social-button linkedin"
