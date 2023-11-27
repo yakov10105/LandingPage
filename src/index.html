@@ -1,221 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script
-      src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <title>המורה שלך לאנגלית</title>
-    <script src="./scripts/index.js"></script>
-    <link rel="stylesheet" href="./styles/styles.css">
-  </head>
-  <body>
-    <div style="display:none;" id="success_alert" class="alert alert-success" role="alert">
-      <a onclick="closeAlert(true)">
-          <span class="glyphicon glyphicon-remove"></span>
-      </a>
-      <span style="text-align: start;direction: rtl;">הטופס נשלח בהצלחה!</span>
-    </div>
-     <div style="display: none;"  id="fail_alert" class="alert alert-danger" role="alert">
-      <a onclick="closeAlert(false)">
-        <span class="glyphicon glyphicon-remove"></span>
-      </a>
-      <span  style="text-align: start;direction: rtl;">חלה שגיאה, אנא נסה שנית.</span>
-    </div>
-    <header>
-      <div class="header-content">
-        <div>
-          <h1 style="direction: rtl; text-align: start">טניה פטרושקביץ'</h1>
-          <h2 style="direction: rtl; text-align: start">המורה שלך לאנגלית!</h2>
-        </div>
-        <div class="fill" style="background-image: url('./assets/tania.JPG')"></div>
-      </div>
-    </header>
-    <section>
-      <div class="form-container">
-        <form id="contact">
-          <h3 style="direction: rtl; text-align: start">השאירו פרטים</h3>
-          <input type="hidden" name="contact_number">
-          <fieldset>
-            <input
-              style="text-align: start; direction: rtl"
-              placeholder="שם מלא"
-              type="text"
-              tabindex="1"
-              id="user_name"
-              required
-              name="user_name"
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              style="text-align: start; direction: rtl"
-              placeholder="טלפון"
-              type="tel"
-              pattern="\d*"
-              tabindex="3"
-              name="user_phone"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              style="text-align: start; direction: rtl"
-              placeholder="רמה נוכחית (לא חובה)"
-              name="user_level"
-              type="text"
-              tabindex="4"
-            />
-          </fieldset>
-          <fieldset>
-            <textarea
-              style="text-align: start; direction: rtl"
-              placeholder="טקסט חופשי (לא חובה)"
-              tabindex="5"
-              name="message"
-            ></textarea>
-          </fieldset>
-          <fieldset>
-            <button type="submit" id="contact-submit">שלח</button>
-          </fieldset>
-        </form>
-      </div>
-    </section>
-    <section class="about-section">
-      <h2 style="direction: rtl">קצת עליי</h2>
-      <p style="direction: rtl">
-        מורה לאנגלית עם נסיון של 6 שנים. עבדתי בישראל, ויטנאם ורוסיה עם תלמידים
-        בגילאי 3 עד 80.
-      </p>
-      <p style="direction: rtl">
-        אעזור לך לשפר את האנגלית שלך באווירה קלילה ורגועה. נשתמש בחומרים
-        רלוונטיים ומוחשיים, כך שתוכל.י להביע את עצמך בביטחון בחיים האמיתיים, כמה
-        שיותר מהר. אם יש קושי ספציפי, נתמקד בו יחד כדי שתרגיש.י יותר נוח.ה
-        ובטוח.ה באנגלית שלך.
-      </p>
-      <p style="direction: rtl">
-        ננהל שיחות סביב תחומי העניין שלך (כן, גם על הסדרה שראית בנטפליקס
-        הסופ״ש), כי ללמוד או להשתפר בשפה חדשה- צריך להיות גם כיף! לדוגמה, אני
-        אוהבת טיולים, פסיכולוגיה, גסטרונומיה, חינוך, סדרות ויוגה. מה איתך? אני
-        מתרגשת לשמוע :)
-      </p>
-    </section>
-    <section>
-      <div class="skills">
-        <div class="skill">
-          <img src="./assets/handshake.png" alt="Skill Icon" />
-          <h3 style="direction: rtl">איך זה עובד ?</h3>
-          <p style="direction: rtl">שיעורים בזום, לגילאי 12 ומעלה </פ>
-          <ul style="direction: rtl">
-            <li>60 דקות - 150 ש”ח</li>
-            <li>90 דקות - 200 ש”ח</li>
-          </ul>
-          <span style="direction: rtl">ניתן לתאם שיעורים פרונטליים באזור תל אביב</span>
-          <span style="direction: rtl">לכל הגילאים (במחיר משתנה)</span>
-        </div>
-        <div class="skill">
-          <img src="./assets/convers.png" alt="Skill Icon" />
-          <h3 style="direction: rtl">במה אני יכולה לעזור?</h3>
-          <ul style="direction: rtl">
-            <li>העלאת הבטחון העצמי בדיבור</li>
-            <li>הבנה של הדקדוק החשוב</li>
-            <li>הרחבת אוצר המילים</li>
-            <li>תרגול יכולות פרזנטציה וכתיבה</li>
-            <li>הכנה לראיון עבודה</li>
-            <li>הכנה לבחינות</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <div class="app-wrapper">
-      <section class="reviews">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="item carousel-item active">
-              <p class="testimonial">
-                אווירה נהדרת וחברתית שגורמת לך לרצות להוציא מעצמך את הטוב ביותר.
-                הגישה האישית עזרה לי להשתפר בלי תחושת לחץ. ממש נוח שאפשר ללמוד
-                גם דרך זום וגם בצורה פרונטלית. אני מעריך את זה שאני תמיד יכול
-                לשאול כל שאלה ולקבל תשובה איכותית ומפורטת.
-              </p>
-              <p class="overview"><b>הילה</b></p>
-            </div>
-            <div class="item carousel-item">
-              <p class="testimonial">
-                טניה היא המורה שאתם צריכים כדי ללמוד לנהל שיחה בכל נושא. אפשר
-                לקיים דיון פילוסופי, או לספר סיפורים טיפשיים :) התרשמתי מאוד מכך
-                שהיא מתאימה את חומרי הלימוד ומאמצת תרגילים מספרי לימוד מקצועיים
-               כדי שהשיעורים יהיו יותר מגוונים.
-              </p>
-              <p class="overview"><b>רון</b></p>
-            </div>
-            <div class="item carousel-item">
-              <p class="testimonial">
-                טניה היא מורה מצוינת ובן אדם מקסים! הגעתי אליה לפני כחצי שנה כשבקושי יכולתי להרכיב משפט אחד באנגלית וכיום אני שולט בשפה גם מבחינת דיבור וגם מבחינת דקדוק ואוצר מילים.
-מורה קשובה שיודעת לזהות את נקודות החולשה שלך בשפה ולשים עליהם דגש עד לשליטה מלאה.
 
-              </p>
-              <p class="overview"><b>דן</b></p>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("Ry72nBZDW4F0N2eLq");
+    })();</script>
+  <title>המורה שלך לאנגלית</title>
+  <script type="text/javascript" src="./scripts/index.js"></script> 
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+  <div style="display:none;" id="success_alert" class="alert alert-success" role="alert">
+    <a onclick="closeAlert(true)">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+    <span style="text-align: start;direction: rtl;">הטופס נשלח בהצלחה!</span>
+  </div>
+  <div style="display: none;" id="fail_alert" class="alert alert-danger" role="alert">
+    <a onclick="closeAlert(false)">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+    <span style="text-align: start;direction: rtl;">חלה שגיאה, אנא נסה שנית.</span>
+  </div>
+  <header>
+    <div class="header-content">
+      <div>
+        <h1 style="direction: rtl; text-align: start">טניה פטרושקביץ'</h1>
+        <h2 style="direction: rtl; text-align: start">המורה שלך לאנגלית!</h2>
+      </div>
+      <div class="fill" style="background-image: url('./assets/tania.JPG')"></div>
+    </div>
+  </header>
+  <section>
+    <div class="form-container">
+      <form id="contact" >
+        <h3 style="direction: rtl; text-align: start">השאירו פרטים</h3>
+        <input type="hidden" name="contact_number">
+        <fieldset>
+          <input style="text-align: start; direction: rtl" placeholder="שם מלא" type="text" tabindex="1" id="user_name"
+            required name="user_name" />
+        </fieldset>
+        <fieldset>
+          <input style="text-align: start; direction: rtl" placeholder="טלפון" type="tel" pattern="\d*" tabindex="3"
+            name="user_phone" required />
+        </fieldset>
+        <fieldset>
+          <input style="text-align: start; direction: rtl" placeholder="רמה נוכחית (לא חובה)" name="user_level"
+            type="text" tabindex="4" />
+        </fieldset>
+        <fieldset>
+          <textarea style="text-align: start; direction: rtl" placeholder="טקסט חופשי (לא חובה)" tabindex="5"
+            name="message"></textarea>
+        </fieldset>
+        <fieldset>
+          <button type="submit" id="contact-submit">שלח</button>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+  <section class="about-section">
+    <h2 style="direction: rtl">קצת עליי</h2>
+    <p style="direction: rtl">
+      מורה לאנגלית עם נסיון של 6 שנים. עבדתי בישראל, ויטנאם ורוסיה עם תלמידים
+      בגילאי 3 עד 80.
+    </p>
+    <p style="direction: rtl">
+      אעזור לך לשפר את האנגלית שלך באווירה קלילה ורגועה. נשתמש בחומרים
+      רלוונטיים ומוחשיים, כך שתוכל.י להביע את עצמך בביטחון בחיים האמיתיים, כמה
+      שיותר מהר. אם יש קושי ספציפי, נתמקד בו יחד כדי שתרגיש.י יותר נוח.ה
+      ובטוח.ה באנגלית שלך.
+    </p>
+    <p style="direction: rtl">
+      ננהל שיחות סביב תחומי העניין שלך (כן, גם על הסדרה שראית בנטפליקס
+      הסופ״ש), כי ללמוד או להשתפר בשפה חדשה- צריך להיות גם כיף! לדוגמה, אני
+      אוהבת טיולים, פסיכולוגיה, גסטרונומיה, חינוך, סדרות ויוגה. מה איתך? אני
+      מתרגשת לשמוע :)
+    </p>
+  </section>
+  <section>
+    <div class="skills">
+      <div class="skill">
+        <img src="./assets/handshake.png" alt="Skill Icon" />
+        <h3 style="direction: rtl">איך זה עובד ?</h3>
+        <p style="direction: rtl">שיעורים בזום, לגילאי 12 ומעלה </פ>
+        <ul style="direction: rtl">
+          <li>60 דקות - 150 ש”ח</li>
+          <li>90 דקות - 200 ש”ח</li>
+        </ul>
+        <span style="direction: rtl">ניתן לתאם שיעורים פרונטליים באזור תל אביב</span>
+        <span style="direction: rtl">לכל הגילאים (במחיר משתנה)</span>
+      </div>
+      <div class="skill">
+        <img src="./assets/convers.png" alt="Skill Icon" />
+        <h3 style="direction: rtl">במה אני יכולה לעזור?</h3>
+        <ul style="direction: rtl">
+          <li>העלאת הבטחון העצמי בדיבור</li>
+          <li>הבנה של הדקדוק החשוב</li>
+          <li>הרחבת אוצר המילים</li>
+          <li>תרגול יכולות פרזנטציה וכתיבה</li>
+          <li>הכנה לראיון עבודה</li>
+          <li>הכנה לבחינות</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="app-wrapper">
+    <section class="reviews">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item carousel-item active">
+            <p class="testimonial">
+              אווירה נהדרת וחברתית שגורמת לך לרצות להוציא מעצמך את הטוב ביותר.
+              הגישה האישית עזרה לי להשתפר בלי תחושת לחץ. ממש נוח שאפשר ללמוד
+              גם דרך זום וגם בצורה פרונטלית. אני מעריך את זה שאני תמיד יכול
+              לשאול כל שאלה ולקבל תשובה איכותית ומפורטת.
+            </p>
+            <p class="overview"><b>הילה</b></p>
           </div>
-          <a
-          class="carousel-control left carousel-control-prev"
-          href="#myCarousel"
-          data-slide="prev"
-          >
+          <div class="item carousel-item">
+            <p class="testimonial">
+              טניה היא המורה שאתם צריכים כדי ללמוד לנהל שיחה בכל נושא. אפשר
+              לקיים דיון פילוסופי, או לספר סיפורים טיפשיים :) התרשמתי מאוד מכך
+              שהיא מתאימה את חומרי הלימוד ומאמצת תרגילים מספרי לימוד מקצועיים
+              כדי שהשיעורים יהיו יותר מגוונים.
+            </p>
+            <p class="overview"><b>רון</b></p>
+          </div>
+          <div class="item carousel-item">
+            <p class="testimonial">
+              טניה היא מורה מצוינת ובן אדם מקסים! הגעתי אליה לפני כחצי שנה כשבקושי יכולתי להרכיב משפט אחד באנגלית וכיום
+              אני שולט בשפה גם מבחינת דיבור וגם מבחינת דקדוק ואוצר מילים.
+              מורה קשובה שיודעת לזהות את נקודות החולשה שלך בשפה ולשים עליהם דגש עד לשליטה מלאה.
+
+            </p>
+            <p class="overview"><b>דן</b></p>
+          </div>
+        </div>
+        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
           <i class="fa fa-angle-left"></i>
         </a>
-        <a
-        class="carousel-control right carousel-control-next"
-        href="#myCarousel"
-        data-slide="next"
-        >
-        <i class="fa fa-angle-right"></i>
-      </a>
-    </div>
-    <button id="contact_btn" onclick="onContactClick()">אני בעניין!</button>
-  </section>
-    </div>
-    <footer>
-      <img src="./assets/cat.png" alt="Your Image" />
-      <div class="rounded-social-buttons">
-        <a
-          class="social-button linkedin"
-          href="https://www.linkedin.com/in/tatiana-petrushkevich-164a51272/"
-          target="_blank"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a
-          class="social-button instagram"
-          href="https://www.instagram.com/tanipetrush/"
-          target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
+        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
       </div>
-    </footer>
-  </body>
+      <button id="contact_btn" onclick="onContactClick()">אני בעניין!</button>
+    </section>
+  </div>
+  <footer>
+    <img src="./assets/cat.png" alt="Your Image" />
+    <div class="rounded-social-buttons">
+      <a class="social-button linkedin" href="https://www.linkedin.com/in/tatiana-petrushkevich-164a51272/"
+        target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a class="social-button instagram" href="https://www.instagram.com/tanipetrush/" target="_blank"><i
+          class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+</body>
+
 </html>
